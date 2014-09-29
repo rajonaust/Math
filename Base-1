@@ -1,0 +1,40 @@
+// Given a number and its base , change it to decimal .
+// Given a number and desired base . the decimal number change to desired base .
+// The range of base is 2-10 .
+#include <iostream>
+using namespace std;
+typedef long long type;
+type fromDecimal(type n , type b)
+{
+    type ans = 0 , multiplyer = 1 ;
+    while(n>0)
+    {
+        ans+=n%b*multiplyer;
+        multiplyer*=10 ;
+        n/=b;
+    }
+    return ans;
+}
+type toDecimal(type n,type b)
+{
+    type ans = 0 , multiplyer = 1 ;
+    while(n>0)
+    {
+        ans+=multiplyer*(n%10);
+        multiplyer*=b;
+        n/=10;
+    }
+    return ans;
+}
+int main()
+{
+    int n , b ;
+
+    cin >> n >> b ;
+    cout << toDecimal(n,b) << endl ; // Convert b base number to decimal number
+
+    cin >> n >> b ;
+    cout << fromDecimal(n,b) << endl ; // Convert decimal number to b base number
+
+    return 0;
+}
