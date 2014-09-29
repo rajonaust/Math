@@ -1,0 +1,56 @@
+// Given a number and its base , change it to decimal .
+// Given a number and desired base . the decimal number change to desired base .
+// The range of base is 2-36 .
+#include <iostream>
+#include <algorithm>
+#include <map>
+using namespace std;
+typedef long long type;
+char base [] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','K','L','O','P','Q','R','S','T','U','X','Y','Z'};
+map <char,int> number ;
+string fromDecimal(type n , type b)
+{
+    string ans = "" ;
+    while(n>0)
+    {
+        ans+=base[n%b];
+        n/=b;
+    }
+    reverse(ans.begin(),ans.end());
+    return ans ;
+}
+type toDecimal(string n,type b)
+{
+    type ans = 0 , multiplyer = 1 ;
+    int siz = n.size()-1;
+    while(siz>=0)
+    {
+        ans+=multiplyer*(number[n[siz]]);
+        multiplyer*=b;
+        siz--;
+    }
+    return ans;
+}
+void init()
+{
+    for(int i=0;i<=35;i++)
+    {
+        if(i<=9) number[(char)(i+48)] = i ;
+        else number[(char)(i+55)] = i ;
+    }
+}
+int main()
+{
+    init();
+
+    type n , b ;
+    string k ;
+
+    cin >> k >> b ;
+    cout << toDecimal(k,b) << endl ; // Convert b base number to decimal number
+
+    cin >> n >> b ;
+    cout << fromDecimal(n,b) << endl ; // Convert decimal number to b base number
+
+    return 0;
+}
