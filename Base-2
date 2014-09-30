@@ -6,7 +6,7 @@
 #include <map>
 using namespace std;
 typedef long long type;
-char base [] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','X','Y','Z'};
+char base [] = {'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','w','X','Y','Z'};
 map <char,int> number ;
 string fromDecimal(type n , type b)
 {
