@@ -1,0 +1,17 @@
+// Convert radian to degree and degree to radian .
+/* 2*PI radian = 360 degree */
+#include <math.h>
+#include <stdio.h>
+double radian , degree ;
+int main()
+{
+    /* Convert radiun to degree */
+    radian = 1.047198 ;
+    degree = (radian*360)/(2*M_PI);
+    printf("The radian = %lf is %lf degree\n",radian,degree);
+    /* Convert radian to degree */
+    degree = 60 ;
+    radian = (degree*2*M_PI)/360;
+    printf("The degree = %lf is %lf radian\n",degree,radian);
+    return 0;
+}
