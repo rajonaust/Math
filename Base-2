@@ -11,6 +11,7 @@ map <char,int> number ;
 string fromDecimal(type n , type b)
 {
     string ans = "" ;
+    if(n==0) return "0"; 
     while(n>0)
     {
         ans+=base[n%b];
